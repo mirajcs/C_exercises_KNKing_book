@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int main(void) {
-  float commision, value, per_share_value;
+  float commision, value, per_share_value, commision1;
   int no_of_shares;
 
   printf("Enter Number of shares: ");
@@ -29,6 +29,13 @@ int main(void) {
     commision = 39.00f;
 
   printf("Commision: $%.2f \n", commision);
+
+  if (no_of_shares < 2000)
+    commision1 = 33.00f + no_of_shares * 0.03f;
+  else
+    commision1 = 33.00f + no_of_shares * 0.02f;
+
+  printf("Rival broker commision: $%.2f \n", commision1);
 
   return 0;
 }
