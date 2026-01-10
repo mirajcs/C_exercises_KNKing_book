@@ -2,12 +2,17 @@
 
 #include <stdio.h>
 
-int main(void)
-{
-  float commision, value;
+int main(void) {
+  float commision, value, per_share_value;
+  int no_of_shares;
 
-  printf("Enter value of trade: ");
-  scanf("%f", &value);
+  printf("Enter Number of shares: ");
+  scanf("%d", &no_of_shares);
+
+  printf("Enter price per share:");
+  scanf("%f", &per_share_value);
+
+  value = (float)no_of_shares * per_share_value;
 
   if (value < 2500.00f)
     commision = 30.00f + 0.017f * value;
@@ -15,20 +20,15 @@ int main(void)
     commision = 56.00f + 0.0066f * value;
   else if (value < 20000.00f)
     commision = 76.00f + 0.0034f * value;
-  else if ( value < 50000.00f)
+  else if (value < 50000.00f)
     commision = 100.00f + 0.0022f * value;
-  else if (value = 500000.00f)
-    commision = 155.00f + 0.0011f * value;
-  else 
+  else
     commision = 255.00f + 0.0009f * value;
 
   if (commision < 39.00f)
     commision = 39.00f;
 
   printf("Commision: $%.2f \n", commision);
- 
-  return 0;  
 
-
-
+  return 0;
 }
